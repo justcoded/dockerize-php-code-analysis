@@ -1,0 +1,28 @@
+{
+    "name": "justcoded/php-code-analysis-tool",
+    "description": "Automatically check and fix PHP code. We need composer.json to install dependencies and allow IDE to help us with maintaining ecs.php",
+    "type": "project",
+    "require": {
+        "symplify/coding-standard": "^12.0",
+        "symplify/easy-coding-standard": "^12.0",
+        "friendsofphp/php-cs-fixer": "^3.26",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.16",
+        "squizlabs/php_codesniffer": "^3.7",
+        "slevomat/coding-standard": "^8.13"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Ihoshyn",
+            "email": "igoshin18@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "version": "1.0.0"
+}

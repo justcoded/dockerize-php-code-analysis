@@ -1,0 +1,12 @@
+version: "3.7"
+
+# SERVICES
+services:
+  php-code-analysis-tool:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
