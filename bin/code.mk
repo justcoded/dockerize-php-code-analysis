@@ -3,8 +3,8 @@
 version ?= 0.2.0
 branch ?= develop
 
-#ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
-ECS_IMAGE := docker.io/library/dockerize-php-code-analysis-php-code-analysis-tool
+ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
+#ECS_IMAGE := docker.io/library/dockerize-php-code-analysis-php-code-analysis-tool
 
 # Define default path if one is not passed
 ifndef path
@@ -73,7 +73,7 @@ code.fix.diff:
 ##
 code.config.publish:
 	@echo '...........Publishing config'
-	@$(eval CONTAINER_ID = $(shell docker create hub.jcdev.net:24000/php-code-analysis-tool:latest))
+	@$(eval CONTAINER_ID = $(shell docker create ${ECS_IMAGE}))
 	@docker cp ${CONTAINER_ID}:/app/ecs.php ecs.php
 	@docker rm -v ${CONTAINER_ID}
 	@echo '...........Published "ecs.php"'
