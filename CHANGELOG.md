@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 <!--- END HEADER -->
 
-## [0.0.2](https://github.com/justcoded/dockerize-php-code-analysis/compare/ed1a11f0ca55f603eb7df6312a31d4e08031d9e8...v0.0.2) (2023-09-20)
+## Beta (2023-09-20)
 
 ---
 
