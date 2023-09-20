@@ -1,6 +1,6 @@
 .PHONY: code.check code.check.dirty code.fix code.fix.dirty code.check.diff code.fix.diff
 
-version ?= 0.2.0
+version ?= 0.2.1
 branch ?= develop
 
 ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
@@ -77,3 +77,6 @@ code.config.publish:
 	@docker cp ${CONTAINER_ID}:/app/ecs.php ecs.php
 	@docker rm -v ${CONTAINER_ID}
 	@echo '...........Published "ecs.php"'
+
+code.self-update:
+	echo $(shell pwd)
