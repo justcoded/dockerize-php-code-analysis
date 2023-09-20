@@ -6,6 +6,8 @@ branch ?= develop
 ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
 #ECS_IMAGE := docker.io/library/dockerize-php-code-analysis-php-code-analysis-tool
 
+CODE_MK_DOWNLOAD_URL=https://raw.githubusercontent.com/justcoded/dockerize-php-code-analysis/main/bin/code.mk
+
 # Define default path if one is not passed
 ifndef path
 	ifneq ("$(wildcard src)","")
@@ -79,4 +81,7 @@ code.config.publish:
 	@echo '...........Published "ecs.php"'
 
 code.self-update:
-	echo $(shell pwd)
+	@echo '...........Downloading new code.mk file'
+	@$(eval CODE_MK_PATH = $(shell find ./ -name code.mk))
+	$(shell curl -o ${CODE_MK_PATH} ${CODE_MK_DOWNLOAD_URL})
+	@echo '...........Downloaded. Path: ${CODE_MK_PATH}'

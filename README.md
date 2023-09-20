@@ -66,3 +66,11 @@ make code.fix.diff branch=main
 make code.config.publish
 ```
 2. Modify `ecs.php` file to fit your needs.
+
+
+#### Update
+You can download a fresh `code.mk` file using the following command:
+
+```shell
+make code.self-update
+```
