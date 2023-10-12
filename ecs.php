@@ -159,7 +159,18 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(NoMixedEchoPrintFixer::class, ['use' => 'echo']);
 
     $ecsConfig->ruleWithConfiguration(BlankLineBeforeStatementFixer::class, [
-        'statements' => ['continue', 'return', 'foreach', 'if', 'switch', 'try', 'throw', 'while', 'yield', 'yield_from'],
+        'statements' => [
+            'continue',
+            'return',
+            'foreach',
+            'if',
+            'switch',
+            'try',
+            'throw',
+            'while',
+            'yield',
+            'yield_from',
+        ],
     ]);
 
     $ecsConfig->ruleWithConfiguration(BlankLinesBeforeNamespaceFixer::class, [

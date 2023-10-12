@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @see: https://github.com/marcocesarato/php-conventional-changelog/blob/main/docs/config.md
  */
