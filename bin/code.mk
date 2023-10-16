@@ -86,5 +86,5 @@ code.config.publish:
 code.self-update:
 	@echo '...........Downloading new code.mk file'
 	@$(eval CODE_MK_PATH = $(shell find ./ -name code.mk))
-	$(shell curl -o ${CODE_MK_PATH} ${CODE_MK_DOWNLOAD_URL} -k)
+	$(shell curl -o ${CODE_MK_PATH} ${CODE_MK_DOWNLOAD_URL} -k -H 'Cache-Control: no-cache, no-store' -H 'Pragma: no-cache')
 	@echo '...........Downloaded. Path: ${CODE_MK_PATH}'
