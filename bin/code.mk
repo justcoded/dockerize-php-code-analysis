@@ -18,9 +18,9 @@ ifndef path
 endif
 
 ifneq ("$(wildcard ecs.php)","")
-    ECS_DR := docker run -it --rm -v "$$PWD":/codebase -v "$$PWD/ecs.php":/app/ecs.php ${ECS_IMAGE} bash
+    ECS_DR := docker run -it --user=${UID}:${GID} --rm -v "$$PWD":/codebase -v "$$PWD/ecs.php":/app/ecs.php ${ECS_IMAGE} bash
 else
-    ECS_DR := docker run -it --rm -v "$$PWD":/codebase ${ECS_IMAGE} bash
+    ECS_DR := docker run -it --user=${UID}:${GID} --rm -v "$$PWD":/codebase ${ECS_IMAGE} bash
 endif
 
 GIT_DIR = $(shell git rev-parse --show-toplevel)
@@ -80,8 +80,11 @@ code.config.publish:
 	@docker rm -v ${CONTAINER_ID}
 	@echo '...........Published "ecs.php"'
 
+##
+# @command code.self-update		   	Download latest code.mk file.
+##
 code.self-update:
 	@echo '...........Downloading new code.mk file'
 	@$(eval CODE_MK_PATH = $(shell find ./ -name code.mk))
-	$(shell curl -o ${CODE_MK_PATH} ${CODE_MK_DOWNLOAD_URL})
+	$(shell curl -o ${CODE_MK_PATH} ${CODE_MK_DOWNLOAD_URL} -k)
 	@echo '...........Downloaded. Path: ${CODE_MK_PATH}'
