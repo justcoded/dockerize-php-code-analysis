@@ -18,9 +18,9 @@ ifndef path
 endif
 
 ifneq ("$(wildcard ecs.php)","")
-    ECS_DR := docker run -it --user=${UID}:${GID} --rm -v "$$PWD":/codebase -v "$$PWD/ecs.php":/app/ecs.php ${ECS_IMAGE} bash
+    ECS_DR := docker run -it --rm -v "$$PWD":/codebase -v "$$PWD/ecs.php":/app/ecs.php ${ECS_IMAGE} bash
 else
-    ECS_DR := docker run -it --user=${UID}:${GID} --rm -v "$$PWD":/codebase ${ECS_IMAGE} bash
+    ECS_DR := docker run -it --rm -v "$$PWD":/codebase ${ECS_IMAGE} bash
 endif
 
 GIT_DIR = $(shell git rev-parse --show-toplevel)
@@ -33,7 +33,7 @@ GIT_DIFF_BRANCH=$(shell git diff --name-only --diff-filter=ACMRTUXB "${GIT_DIFF_
 ##
 code.check:
 	${ECS_DR} \
-		-c "ecs check --config /app/ecs.php ${path}"
+		-c "pwd && whoami && ecs check --config /app/ecs.php ${path}"
 
 ##
 # @command code.fix				   Fix code in specified path. Usage: `make code.fix path=src/app\ src/tests` (src by default)
