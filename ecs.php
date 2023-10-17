@@ -99,7 +99,6 @@ return static function (ECSConfig $ecsConfig): void {
         BlankLineAfterNamespaceFixer::class,
         BlankLineAfterOpeningTagFixer::class,
         CastSpacesFixer::class,
-        ClassAttributesSeparationFixer::class,
         CleanNamespaceFixer::class,
         CompactNullableTypehintFixer::class,
         DeadCatchSniff::class,

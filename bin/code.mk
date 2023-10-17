@@ -33,7 +33,7 @@ GIT_DIFF_BRANCH=$(shell git diff --name-only --diff-filter=ACMRTUXB "${GIT_DIFF_
 ##
 code.check:
 	${ECS_DR} \
-		-c "pwd && whoami && ecs check --config /app/ecs.php ${path}"
+		-c "ecs check --config /app/ecs.php ${path}"
 
 ##
 # @command code.fix				   Fix code in specified path. Usage: `make code.fix path=src/app\ src/tests` (src by default)
