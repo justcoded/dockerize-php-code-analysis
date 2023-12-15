@@ -23,7 +23,7 @@ RUN cd ~ \
     && composer
 
 RUN composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-RUN composer global require symplify/coding-standard symplify/easy-coding-standard friendsofphp/php-cs-fixer kubawerlos/php-cs-fixer-custom-fixers squizlabs/php_codesniffer slevomat/coding-standard
+RUN composer global require -W symplify/coding-standard:^12.0 symplify/easy-coding-standard:^12.0 friendsofphp/php-cs-fixer:^3.41 kubawerlos/php-cs-fixer-custom-fixers:^3.17 squizlabs/php_codesniffer:^3.8 slevomat/coding-standard:^8.14
 
 ENV PATH="~/.composer/vendor/bin:${PATH}"
 
