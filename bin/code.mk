@@ -1,6 +1,6 @@
 .PHONY: code.check code.check.dirty code.fix code.fix.dirty code.check.diff code.fix.diff
 
-version ?= 0.2.3
+version ?= 0.3.0
 branch ?= develop
 
 ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
