@@ -1,0 +1,18 @@
+{
+    "name": "justcoded/php-code-analysis-tool",
+    "description": "Automatically check and fix PHP code. We need composer.json to install dependencies and allow IDE to help us with maintaining ecs.php",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Ihoshyn",
+            "email": "igoshin18@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JustCoded\\PhpCodeAnalysisTool\\": "./"
+        }
+    },
+    "version": "v0.4.0"
+}

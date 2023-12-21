@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use JustCoded\PhpCodeAnalysisTool\Fixers\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Alias\NoAliasFunctionsFixer;
 use PhpCsFixer\Fixer\Alias\NoAliasLanguageConstructCallFixer;
 use PhpCsFixer\Fixer\Alias\NoMixedEchoPrintFixer;
@@ -84,7 +85,6 @@ use PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer;
 use PhpCsFixer\Fixer\Semicolon\MultilineWhitespaceBeforeSemicolonsFixer;
 use PhpCsFixer\Fixer\Semicolon\NoEmptyStatementFixer;
 use PhpCsFixer\Fixer\Semicolon\NoSinglelineWhitespaceBeforeSemicolonsFixer;
-use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\StringNotation\ExplicitStringVariableFixer;
 use PhpCsFixer\Fixer\StringNotation\HeredocToNowdocFixer;
 use PhpCsFixer\Fixer\StringNotation\NoBinaryStringFixer;
