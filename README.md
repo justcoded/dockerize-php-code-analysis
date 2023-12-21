@@ -1,3 +1,6 @@
+# ⚠️ WARNING 
+### PHP Code Code Analysis Tool commands moved to https://github.com/justcoded/git-extras repository.
+
 # Dockerized PHP Code Analysis Tool
 
 This dockerized tool provides you Makefile commands to check and fix PHP code.  
