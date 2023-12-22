@@ -288,19 +288,7 @@ return static function (ECSConfig $ecsConfig): void {
         ],
     ]);
 
-    $ecsConfig->skip([
-        PhpdocSummaryFixer::class,
-        PhpdocToCommentFixer::class,
-        PsrAutoloadingFixer::class,
-        SelfAccessorFixer::class,
-        SimplifiedNullReturnFixer::class,
-        StatementIndentationFixer::class,
-        UnaryOperatorSpacesFixer::class,
-        ArrayOpenerAndCloserNewlineFixer::class,
-        ArrayListItemNewlineFixer::class,
-        StandaloneLineInMultilineArrayFixer::class,
-        NoAliasLanguageConstructCallFixer::class,
-
+    $baseSkipPaths = [
         '_ide_helper*.php',
         '.phpstorm.meta.php',
         '*.blade.php',
@@ -327,7 +315,34 @@ return static function (ECSConfig $ecsConfig): void {
         'src/storage',
         'boilerplate/src/storage',
 
+        'vendor',
+        'src/vendor',
+        'boilerplate/src/vendor',
+
         'var',
         'src/var',
+    ];
+
+    $skipPaths = [];
+    foreach (['codebase/', './', ''] as $prefix) {
+        foreach ($baseSkipPaths as $skipPath) {
+            $skipPaths[] = "{$prefix}$skipPath";
+        }
+    }
+
+    $ecsConfig->skip([
+        PhpdocSummaryFixer::class,
+        PhpdocToCommentFixer::class,
+        PsrAutoloadingFixer::class,
+        SelfAccessorFixer::class,
+        SimplifiedNullReturnFixer::class,
+        StatementIndentationFixer::class,
+        UnaryOperatorSpacesFixer::class,
+        ArrayOpenerAndCloserNewlineFixer::class,
+        ArrayListItemNewlineFixer::class,
+        StandaloneLineInMultilineArrayFixer::class,
+        NoAliasLanguageConstructCallFixer::class,
+
+        ...$skipPaths,
     ]);
 };
