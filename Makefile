@@ -4,7 +4,6 @@ SHELL=/bin/bash
 include bin/colors-xterm.mk
 
 PROJECT_NAME := Dockerized PHP Code Analysis Tool
-SQL_DB_MAX_WAIT := 120
 
 default:
 	@echo '${PROJECT_NAME}'
