@@ -269,9 +269,10 @@ return static function (ECSConfig $ecsConfig): void {
         'closure_fn_spacing' => 'none',
     ]);
 
-    $ecsConfig->ruleWithConfiguration(UnusedVariableSniff::class, [
-        'ignoreUnusedValuesWhenOnlyKeysAreUsedInForeach' => true,
-    ]);
+    // Disabled as has issues.
+    //$ecsConfig->ruleWithConfiguration(UnusedVariableSniff::class, [
+    //    'ignoreUnusedValuesWhenOnlyKeysAreUsedInForeach' => true,
+    //]);
 
     $ecsConfig->ruleWithConfiguration(MultilineWhitespaceBeforeSemicolonsFixer::class, ['strategy' => 'no_multi_line']);
 
