@@ -105,7 +105,6 @@ use SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff;
-use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use Symplify\CodingStandard\Fixer\ArrayNotation\ArrayListItemNewlineFixer;
 use Symplify\CodingStandard\Fixer\ArrayNotation\ArrayOpenerAndCloserNewlineFixer;
 use Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer;
@@ -157,7 +156,6 @@ return static function (ECSConfig $ecsConfig): void {
         MultilinePromotedPropertiesFixer::class,
         NativeFunctionCasingFixer::class,
         NativeTypeDeclarationCasingFixer::class,
-        NewWithParenthesesFixer::class,
         NoAliasFunctionsFixer::class,
         NoAliasLanguageConstructCallFixer::class,
         NoAlternativeSyntaxFixer::class,
@@ -216,6 +214,10 @@ return static function (ECSConfig $ecsConfig): void {
         ControlStructureContinuationPositionFixer::class,
         StatementIndentationFixer::class,
         SingleSpaceAroundConstructFixer::class,
+    ]);
+
+    $ecsConfig->ruleWithConfiguration(NewWithParenthesesFixer::class, [
+        'anonymous_class' => false,
     ]);
 
     $ecsConfig->ruleWithConfiguration(VisibilityRequiredFixer::class, [
