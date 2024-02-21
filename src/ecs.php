@@ -208,12 +208,14 @@ return static function (ECSConfig $ecsConfig): void {
     // split of BracesFixer in PHP CS Fixer 3.10 - https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/4884
     $ecsConfig->rules([
         ControlStructureBracesFixer::class,
-        BracesPositionFixer::class,
         NoMultipleStatementsPerLineFixer::class,
         DeclareParenthesesFixer::class,
         ControlStructureContinuationPositionFixer::class,
         StatementIndentationFixer::class,
         SingleSpaceAroundConstructFixer::class,
+    ]);
+    $ecsConfig->ruleWithConfiguration(BracesPositionFixer::class, [
+        'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
     ]);
 
     $ecsConfig->ruleWithConfiguration(NewWithParenthesesFixer::class, [
