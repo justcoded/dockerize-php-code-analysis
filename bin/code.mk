@@ -1,9 +1,9 @@
 .PHONY: code.check code.check.dirty code.fix code.fix.dirty code.check.diff code.fix.diff
 
-version ?= 0.4.1
+version ?= 0.5.6
 branch ?= develop
 
-ECS_IMAGE := hub.jcdev.net:24000/php-code-analysis-tool:${version}
+ECS_IMAGE := ghcr.io/justcoded/php-code-analysis:${version}
 #ECS_IMAGE := docker.io/library/dockerize-php-code-analysis-php-code-analysis-tool
 
 CODE_MK_DOWNLOAD_URL=https://raw.githubusercontent.com/justcoded/dockerize-php-code-analysis/main/bin/code.mk
