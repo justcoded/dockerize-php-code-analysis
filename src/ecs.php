@@ -309,6 +309,10 @@ return static function (ECSConfig $ecsConfig): void {
         'src/build',
         'boilerplate/build',
 
+        'runtime',
+        'src/runtime',
+        'boilerplate/runtime',
+
         'node_modules',
         'src/node_modules',
         'src/admin/node_modules',
